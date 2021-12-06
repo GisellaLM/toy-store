@@ -1,11 +1,18 @@
-
 import './App.css';
+import NavBar from './components/NavBar';
+import { Grid } from '@material-ui/core';
+
 
 function App() {
   return (
+   
     <div className="App">
-      que onda perri,esto va a ser una store de juguetes
+      <Grid container>
+        <Grid item sm={12} md={12}><NavBar></NavBar> </Grid>
+        <Grid item> </Grid>
+      </Grid>
     </div>
+   
   );
 }
 
