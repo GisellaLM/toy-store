@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import logo from "../img/logo.png";
+import CartWidget from './CartWidget';
 
 const useStyles = makeStyles((theme) => ({
     logo:{
@@ -53,9 +54,9 @@ export default function NavBar() {
         <img className={classes.logoImg} src={logo} alt={""}></img>
         </div>
         <div className={classes.boxLinks}>
-        {menuTabs.map((item,index)=>(<Button key={item.keyTab}className={classes.button}>{item.nameTab}</Button>))}
+        {menuTabs.map((item,index)=>(<Button key={item.keyTab} className={classes.button}>{item.nameTab}</Button>))}
         </div>
-
+        <div ><CartWidget/></div>
         </Toolbar>
       </AppBar>
     </div>

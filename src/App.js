@@ -1,15 +1,15 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import { Grid } from '@material-ui/core';
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
   return (
-   
     <div className="App">
       <Grid container>
-        <Grid item sm={12} md={12}><NavBar></NavBar> </Grid>
-        <Grid item> </Grid>
+        <Grid item xs={12} sm={12} md={12}><NavBar/></Grid>
+        <Grid item xs={12} sm={12} md={12}><ItemListContainer greeting={"soy un mensaje del componente itemListContainer"}/></Grid>
       </Grid>
     </div>
    
