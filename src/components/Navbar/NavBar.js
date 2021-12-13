@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import logo from "../img/logo.png";
-import CartWidget from './CartWidget';
+import logo from "../../assets/images/logo.png";
+import CartWidget from '../CartWidget';
+
 
 const useStyles = makeStyles((theme) => ({
     logo:{
