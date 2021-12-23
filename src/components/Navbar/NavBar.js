@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import logo from "../../assets/images/logo.png";
 import CartWidget from '../CartWidget';
+import { Link } from 'react-router-dom';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,23 +27,28 @@ const useStyles = makeStyles((theme) => ({
   },
   boxLinks:{
     flexGrow: 1,
+  },
+  link:{
+    textDecoration:'none'
   }
 }));
 
 const menuTabs = [{
+
   keyTab: 1,
-  nameTab: 'HOME',
+  nameTab: 'CATEGORIES',
+  component:'ItemListContainer',
+  linkTo:'/categories'
 },
 {
   keyTab: 2,
-  nameTab: 'CATEGORIES'
-},
-{
-  keyTab: 3,
-  nameTab: 'SHOP LOCATION'
+  nameTab: 'SHOP LOCATION',
+  component:'ItemListContainer',
+  linkTo:'/shop-location'
 }, {
-  keyTab: 4,
-  nameTab: 'CONTACT US!'
+  keyTab: 3,
+  nameTab: 'CONTACT US!',
+  linkTo:'/contact-us'
 }]
 
 export default function NavBar() {
@@ -51,11 +58,13 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
-        <div className={classes.logo}>
+        <Link to={'/'}className={classes.logo}>
         <img className={classes.logoImg} src={logo} alt={""}></img>
-        </div>
+        </Link>
         <div className={classes.boxLinks}>
-        {menuTabs.map((item,index)=>(<Button key={item.keyTab} className={classes.button}>{item.nameTab}</Button>))}
+           {menuTabs.map((item,index)=>(<Link to={item.linkTo} key={item.keyTab} className={classes.link}><Button key={item.keyTab} className={classes.button}>{item.nameTab}</Button></Link>))} 
+        {/* {menuTabs.map((item,index)=>(<Button key={item.keyTab} className={classes.button}>{item.nameTab}</Button>))} */}
+       
         </div>
         <div ><CartWidget/></div>
         </Toolbar>

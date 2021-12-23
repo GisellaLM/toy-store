@@ -3,14 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddRounded from '@material-ui/icons/AddCircleOutlineRounded';
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-    margin: {
-      margin: theme.spacing(0),
-    },
-    extendedIcon: {
-      marginRight: theme.spacing(0),
-    },
+    button:{
+      backgroundColor: "##0000000a",
+      color:"#d59d76",
+      fontWeight:"bold",
+      '&:hover':{
+        color:'#d59d76'
+      }
+    }
   }));
 
 
@@ -42,16 +45,18 @@ export default function ItemCount({stock,initial,onAdd}){
       }
 
     return(<>
-        
-        <div>
-        <Button size="small" color="primary" className={classes.margin} onClick={handleDecrement}>
-        <RemoveRoundedIcon></RemoveRoundedIcon></Button>
-        <p>{count}</p>
-        <Button  size="small" color="primary" className={classes.margin} onClick={handleIncrement}>
-        <AddRounded></AddRounded>
-        </Button>
-        </div>
-
-        <button onClick={addItemToCart}>Agregar a carrito</button>
+        <Box alignItems="center" justifyContent="center">
+          <Box display="inline-flex" borderColor={"#ffff"} marginTop={3} marginBottom={3}>
+            <Button size="small" color="primary" className={classes.margin} onClick={handleDecrement}>
+            <RemoveRoundedIcon></RemoveRoundedIcon></Button>
+            <Box paddingLeft={2} paddingRight={2}>{count}</Box>
+            <Button  size="small" color="primary" className={classes.margin} onClick={handleIncrement}>
+            <AddRounded></AddRounded>
+            </Button>
+          </Box>
+          <Box>
+            <Button onClick={addItemToCart} variant="outlined" className={classes.button}>Add to cart</Button>
+          </Box>
+        </Box>
     </>)
 }
