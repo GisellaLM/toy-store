@@ -1,35 +1,34 @@
-import React from 'react';
-import { Grid, Paper, Button, Slide } from '@material-ui/core';
-import tren from '../../assets/images/banner_tren.png'
-import Carousel from 'react-material-ui-carousel'
-
+import React from "react";
+import { Grid, Paper, Button, Slide } from "@material-ui/core";
+import tren from "../../assets/images/banner_tren.png";
+import Carousel from "react-material-ui-carousel";
 
 function Example(props) {
     var items = [
         {
             name: "Random Name #1",
             description: "Probably the most random thing you have ever seen!",
-            class: "ads-hello"
+            class: "ads-hello",
         },
         {
             name: "Random Name #2",
             description: "Hello World!",
-            class: "ads-train"
+            class: "ads-train",
         },
         {
             name: "Random Name #2",
             description: "Hello World!",
-            class: "ads-about"
-        }
-    ]
+            class: "ads-about",
+        },
+    ];
 
     return (
         <Carousel autoPlay={false} animation={"slide"} duration={2000}>
-            {
-                items.map((item, i) => <Item key={i} item={item} />)
-            }
+            {items.map((item, i) => (
+                <Item key={i} item={item} />
+            ))}
         </Carousel>
-    )
+    );
 }
 
 function Item(props) {
@@ -41,20 +40,18 @@ function Item(props) {
             <Button className="CheckButton">
                 Check it out!
             </Button> */}
-            <div className={props.item.class} ></div>
+            <div className={props.item.class}></div>
         </Paper>
-    )
+    );
 }
 
-
 export default function ADS() {
-    return (<>
-        <Grid container>
-
-            <Grid item xs={12} sm={12} md={12}>
-
-                <Example></Example>
-                {/* <Grid container>
+    return (
+        <>
+            <Grid container>
+                <Grid item xs={12} sm={12} md={12}>
+                    <Example></Example>
+                    {/* <Grid container>
                     <Grid item xs={12} sm={12} md={6} xl={6}>
                         <div className="ads-hello" ></div>
                     </Grid>
@@ -73,9 +70,8 @@ export default function ADS() {
                         
                     </Grid>
                 </Grid> */}
-
+                </Grid>
             </Grid>
-        </Grid>
-
-    </>)
+        </>
+    );
 }
